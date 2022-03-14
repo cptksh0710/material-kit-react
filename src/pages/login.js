@@ -105,31 +105,45 @@ const Login = () => {
               value={formik.values.password}
               variant="outlined"
             />
-            <Box sx={{ py: 2 }}>
-              <Button
-                color="primary"
-                disabled={formik.isSubmitting}
-                minWidth
-                size="large"
-                type="submit"
-                variant="contained"
-              >
-                로그인
-              </Button>
-            </Box>
 
-            <Box sx={{ py: 2 }}>
-              <Button
-                color="primary"
-                disabled={formik.isSubmitting}
-                minWidth
-                size="large"
-                type="submit"
-                variant="contained"
+            <Typography>
+              <Grid
+                container
+                spacing={3}
               >
-                회원가입
+                <Grid
+                  item
+                  xs={12}
+                  md={6}
+                >
+                  <Button
+                    color="info"
+                    fullWidth
+                    onClick={formik.handleSubmit}
+                    size="large"
+                    variant="contained"
+                  >
+                  로그인
               </Button>
-            </Box>
+              </Grid>
+
+                <Grid
+                  item
+                  xs={12}
+                  md={6}
+                >
+                  <Button
+                    fullWidth
+                    color="error"
+                    onClick={formik.handleSubmit}
+                    size="large"
+                  variant="contained"
+                  >
+                  회원 가입
+                  </Button>
+                </Grid>
+              </Grid>
+            </Typography>
 
             <Typography>
               <NextLink
