@@ -5,8 +5,8 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Box, Button, Container, Grid, Link, TextField, Typography } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Facebook as FacebookIcon } from '../icons/facebook';
-import { Google as GoogleIcon } from '../icons/google';
+//import { Facebook as FacebookIcon } from '../icons/facebook';
+//import { Google as GoogleIcon } from '../icons/google';
 
 const Login = () => {
   const router = useRouter();
@@ -63,12 +63,14 @@ const Login = () => {
           <form onSubmit={formik.handleSubmit}>
             <Box sx={{ my: 3 }}>
               <Typography
+                align="center"
                 color="textPrimary"
                 variant="h4"
               >
                 HISEOUL ML CONSOLE
               </Typography>
               <Typography
+                align="center"
                 color="textSecondary"
                 gutterBottom
                 variant="body2"
@@ -76,68 +78,18 @@ const Login = () => {
                 로그인 화면 입니다
               </Typography>
             </Box>
-            <Grid
-              container
-              spacing={3}
-            >
-              <Grid
-                item
-                xs={12}
-                md={6}
-              >
-                <Button
-                  color="info"
-                  fullWidth
-                  startIcon={<FacebookIcon />}
-                  onClick={formik.handleSubmit}
-                  size="large"
-                  variant="contained"
-                >
-                  Login with Facebook
-                </Button>
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                md={6}
-              >
-                <Button
-                  fullWidth
-                  color="error"
-                  startIcon={<GoogleIcon />}
-                  onClick={formik.handleSubmit}
-                  size="large"
-                  variant="contained"
-                >
-                  Login with Google
-                </Button>
-              </Grid>
-            </Grid>
-            <Box
-              sx={{
-                pb: 1,
-                pt: 3
-              }}
-            >
-              <Typography
-                align="center"
-                color="textSecondary"
-                variant="body1"
-              >
-                or login with email address
-              </Typography>
-            </Box>
+            
             <TextField
-              error={Boolean(formik.touched.email && formik.errors.email)}
+              error={Boolean(formik.touched.userid && formik.errors.userid)}
               fullWidth
-              helperText={formik.touched.email && formik.errors.email}
-              label="Email Address"
+              helperText={formik.touched.userid && formik.errors.userid}
+              label="User ID"
               margin="normal"
-              name="email"
+              name="userid"
               onBlur={formik.handleBlur}
               onChange={formik.handleChange}
-              type="email"
-              value={formik.values.email}
+              type="userid"
+              value={formik.values.userid}
               variant="outlined"
             />
             <TextField
@@ -165,12 +117,21 @@ const Login = () => {
                 로그인
               </Button>
             </Box>
-            <Typography
-              color="textSecondary"
-              variant="body2"
-            >
-              Don&apos;t have an account?
-              {' '}
+
+            <Box sx={{ py: 2 }}>
+              <Button
+                color="primary"
+                disabled={formik.isSubmitting}
+                minWidth
+                size="large"
+                type="submit"
+                variant="contained"
+              >
+                회원가입
+              </Button>
+            </Box>
+
+            <Typography>
               <NextLink
                 href="/register"
               >
@@ -182,7 +143,24 @@ const Login = () => {
                     cursor: 'pointer'
                   }}
                 >
-                  Sign Up
+                  아이디 찾기
+                </Link>
+              </NextLink>
+            </Typography>
+
+            <Typography>
+              <NextLink
+                href="/register"
+              >
+                <Link
+                  to="/register"
+                  variant="subtitle2"
+                  underline="hover"
+                  sx={{
+                    cursor: 'pointer'
+                  }}
+                >
+                  비밀번호 찾기
                 </Link>
               </NextLink>
             </Typography>
