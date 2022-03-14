@@ -57,7 +57,7 @@ const Login = () => {
               component="a"
               startIcon={<ArrowBackIcon fontSize="small" />}
             >
-              Dashboard
+              이전 화면
             </Button>
           </NextLink>
           <form onSubmit={formik.handleSubmit}>
@@ -66,14 +66,14 @@ const Login = () => {
                 color="textPrimary"
                 variant="h4"
               >
-                Sign in
+                HISEOUL ML CONSOLE
               </Typography>
               <Typography
                 color="textSecondary"
                 gutterBottom
                 variant="body2"
               >
-                Sign in on the internal platform
+                로그인 화면 입니다
               </Typography>
             </Box>
             <Grid
@@ -157,12 +157,12 @@ const Login = () => {
               <Button
                 color="primary"
                 disabled={formik.isSubmitting}
-                fullWidth
+                minWidth
                 size="large"
                 type="submit"
                 variant="contained"
               >
-                Sign In Now
+                로그인
               </Button>
             </Box>
             <Typography
