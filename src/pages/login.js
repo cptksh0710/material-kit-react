@@ -132,15 +132,16 @@ const Login = () => {
                   xs={12}
                   md={6}
                 >
-                  <Button
-                    fullWidth
-                    color="error"
-                    onClick={formik.handleSubmit}
-                    size="large"
-                  variant="contained"
-                  >
-                  회원 가입
-                  </Button>
+                   <Button
+                     fullWidth
+                     color="error"
+                     onClick={formik.handleChange}
+                     size="large"
+                     variant="contained"
+                     href="/register"
+                    >
+                      회원 가입
+                    </Button>
                 </Grid>
               </Grid>
             </Typography>
@@ -157,7 +158,7 @@ const Login = () => {
                     cursor: 'pointer'
                   }}
                 >
-                  아이디 찾기
+                    아이디 찾기
                 </Link>
               </NextLink>
             </Typography>
