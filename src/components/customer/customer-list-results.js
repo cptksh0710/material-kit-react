@@ -81,19 +81,25 @@ export const CustomerListResults = ({ customers, ...rest }) => {
                   />
                 </TableCell>
                 <TableCell>
-                  Name
+                  no
                 </TableCell>
                 <TableCell>
-                  Email
+                  id
                 </TableCell>
                 <TableCell>
-                  Location
+                  name
                 </TableCell>
                 <TableCell>
-                  Phone
+                  email
                 </TableCell>
                 <TableCell>
-                  Registration date
+                  가입 날짜
+                </TableCell>
+                <TableCell>
+                  아이디 활성여부
+                </TableCell>
+                <TableCell>
+                  유저 권한
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -112,37 +118,25 @@ export const CustomerListResults = ({ customers, ...rest }) => {
                     />
                   </TableCell>
                   <TableCell>
-                    <Box
-                      sx={{
-                        alignItems: 'center',
-                        display: 'flex'
-                      }}
-                    >
-                      <Avatar
-                        src={customer.avatarUrl}
-                        sx={{ mr: 2 }}
-                      >
-                        {getInitials(customer.name)}
-                      </Avatar>
-                      <Typography
-                        color="textPrimary"
-                        variant="body1"
-                      >
-                        {customer.name}
-                      </Typography>
-                    </Box>
+                    {customer.no}
+                  </TableCell>
+                  <TableCell>
+                    {customer.id}
+                  </TableCell>
+                  <TableCell>
+                    {customer.name}
                   </TableCell>
                   <TableCell>
                     {customer.email}
                   </TableCell>
                   <TableCell>
-                    {`${customer.address.city}, ${customer.address.state}, ${customer.address.country}`}
+                    {customer.write_date}
                   </TableCell>
                   <TableCell>
-                    {customer.phone}
+                    {customer.active_yn}
                   </TableCell>
                   <TableCell>
-                    {format(customer.createdAt, 'dd/MM/yyyy')}
+                    {customer.permission}
                   </TableCell>
                 </TableRow>
               ))}

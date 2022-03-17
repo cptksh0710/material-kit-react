@@ -26,7 +26,7 @@ export const CustomerListToolbar = (props) => (
         sx={{ m: 1 }}
         variant="h4"
       >
-        Customers
+        회원 정보
       </Typography>
       <Box sx={{ m: 1 }}>
         <Button
@@ -45,7 +45,7 @@ export const CustomerListToolbar = (props) => (
           color="primary"
           variant="contained"
         >
-          Add Customers
+          회원 추가
         </Button>
       </Box>
     </Box>
@@ -67,7 +67,7 @@ export const CustomerListToolbar = (props) => (
                   </InputAdornment>
                 )
               }}
-              placeholder="Search customer"
+              placeholder="회원 검색"
               variant="outlined"
             />
           </Box>

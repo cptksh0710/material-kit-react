@@ -16,18 +16,18 @@ const Login = () => {
       password: 'Password123'
     },
     validationSchema: Yup.object({
-      email: Yup
+      userid: Yup
         .string()
-        .email(
-          'Must be a valid email')
+        //.userid(
+         // '잘못된 ID')
         .max(255)
         .required(
-          'Email is required'),
+          'ID를 입력하세요'),
       password: Yup
         .string()
         .max(255)
         .required(
-          'Password is required')
+          '비밀번호를 입력하세요')
     }),
     onSubmit: () => {
       router.push('/');
@@ -146,38 +146,44 @@ const Login = () => {
               </Grid>
             </Typography>
 
-            <Typography>
-              <NextLink
-                href="/register"
-              >
-                <Link
-                  to="/register"
-                  variant="subtitle2"
-                  underline="hover"
-                  sx={{
-                    cursor: 'pointer'
-                  }}
-                >
-                    아이디 찾기
-                </Link>
-              </NextLink>
-            </Typography>
 
             <Typography>
-              <NextLink
-                href="/register"
+              <grid
+                spacing={3}
               >
-                <Link
-                  to="/register"
-                  variant="subtitle2"
-                  underline="hover"
-                  sx={{
-                    cursor: 'pointer'
-                  }}
-                >
-                  비밀번호 찾기
-                </Link>
-              </NextLink>
+                <grid>
+                  <NextLink
+                    href="/findid"
+                  >
+                    <Link
+                      to="/register"
+                      variant="subtitle2"
+                      underline="hover"
+                      sx={{
+                        cursor: 'pointer'
+                      }}
+                    >
+                      아이디 찾기
+                    </Link>
+                  </NextLink>
+                </grid>
+                <grid>
+                  <NextLink
+                    href="/findpass"
+                  >
+                    <Link
+                      to="/register"
+                      variant="subtitle2"
+                      underline="hover"
+                      sx={{
+                        cursor: 'pointer'
+                      }}
+                    >
+                      비밀번호 찾기
+                    </Link>
+                  </NextLink>
+                </grid>
+              </grid>
             </Typography>
           </form>
         </Container>
